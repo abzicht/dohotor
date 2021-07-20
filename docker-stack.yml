@@ -1,9 +1,5 @@
 version: '3.7'
 
-# deploy this service via
-# $ docker build -t dohotor ./
-# $ docker stack deploy --compose-file docker-stack.yml dohotor
-
 services:
   dohotor:
     image: abzicht/dohotor:latest
