@@ -31,4 +31,4 @@ RUN dnsmasq --test
 EXPOSE 53/udp
 EXPOSE 53/tcp
 
-ENTRYPOINT /app/entrypoint.sh ${UPSTREAM_DNS} ${LISTEN_ADDRESS}
+ENTRYPOINT /app/entrypoint.sh ${UPSTREAM_DNS}

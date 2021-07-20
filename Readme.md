@@ -42,7 +42,6 @@ __Deployment__:
 ```bash
 # Optionally fill `hosts` with additional host addresses
 touch hosts
-docker build -t dohotor ./
 docker stack deploy --compose-file docker-stack.yml dohotor
 ```
 
