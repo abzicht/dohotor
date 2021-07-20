@@ -1,0 +1,24 @@
+version: '3.7'
+
+# deploy this service via
+# $ docker build -t dohotor ./
+# $ docker stack deploy --compose-file docker-stack.yml dohotor
+
+services:
+  dohotor:
+    image: dohotor:latest
+    configs:
+      # This file holds additional host addresses (equal to /etc/hosts)
+      - source: hosts_config
+        target: /app/hosts
+    environment:
+      # Contact this DoH server for upstream requests
+      UPSTREAM_DNS: "https://1.1.1.1/dns-query"
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+
+configs:
+  hosts_config:
+    name: hosts_config-0
+    file: ./hosts
