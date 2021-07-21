@@ -2,7 +2,7 @@
 
 This is an easily deployable docker service for running your personal DNS
 server that resolves DNS queries using HTTPS (DoH) for __security__ and TOR for
-__anonymity__.
+__anonymity__. The original idea and parts of the underlying structure are taken from [@alexmuffet](https://github.com/alecmuffett/dohot).
 
 With DoHoTor, your DNS traffic is no longer associated with you and your workstation!
 
@@ -37,7 +37,7 @@ graph LR
     D3 -/-> E(DNS Server)
 -->
 
-__Deployment__:
+__Deployment:__
 
 ```bash
 # Optionally fill `hosts` with additional host addresses
