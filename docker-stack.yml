@@ -2,14 +2,11 @@ version: '3.7'
 
 services:
   dohotor:
-    image: abzicht/dohotor:latest
+    image: dohotor
     configs:
       # This file holds additional host addresses (equal to /etc/hosts)
       - source: hosts_config
         target: /app/hosts
-    environment:
-      # Contact this DoH server for upstream requests
-      UPSTREAM_DNS: "https://1.1.1.1/dns-query"
     ports:
       - "53:53/udp"
       - "53:53/tcp"
