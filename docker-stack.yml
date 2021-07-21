@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   dohotor:
-    image: dohotor
+    image: abzicht/dohotor:latest
     configs:
       # This file holds additional host addresses (equal to /etc/hosts)
       - source: hosts_config
