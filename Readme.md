@@ -42,5 +42,10 @@ __Deployment:__
 ```bash
 # Optionally fill `hosts` with additional host addresses
 touch hosts
+# Option A: Run as service
 docker stack deploy --compose-file docker-stack.yml dohotor
+# Option B: Run as container
+docker run -p "53:53/udp" -p "53:53/tcp" --name "DoHoTor" \
+	--mount type=bind,src=/absolute/path/to/hosts,dst=/app/hosts \
+	abzicht/dohotor:latest
 ```
