@@ -1,8 +1,8 @@
 version: '3.7'
 
 services:
-  dohotor:
-    image: abzicht/dohotor:latest
+  doh:
+    image: doh
     configs:
       # This file holds additional host addresses (equal to /etc/hosts)
       - source: hosts_config
@@ -13,5 +13,5 @@ services:
 
 configs:
   hosts_config:
-    name: hosts_config-0
+    name: hosts_config-DoH-0
     file: ./hosts

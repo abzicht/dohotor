@@ -7,7 +7,7 @@ MAINTAINER Abzicht <abzicht@gmail.com>
 # tor for anonymity
 # dnscrypt-proxy for tunnelling DoH over tor
 RUN apt-get update \
-	&& apt-get install -y dnsmasq dnscrypt-proxy tor ca-certificates \
+	&& apt-get install -y dnsmasq dnscrypt-proxy ca-certificates \
 	&& apt-get autoremove -y \
 	&& rm -rf /var/lib/apt/lists/*
 
@@ -23,7 +23,7 @@ COPY ./entrypoint.sh /app/entrypoint.sh
 
 RUN dnsmasq --test
 
-RUN tor & (sleep 10 && dnscrypt-proxy -service install)
+RUN dnscrypt-proxy -service install
 
 EXPOSE 53/udp
 EXPOSE 53/tcp
