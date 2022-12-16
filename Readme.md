@@ -49,3 +49,4 @@ docker run -p "53:53/udp" -p "53:53/tcp" --name "DoHoTor" \
 	--mount type=bind,src=/absolute/path/to/hosts,dst=/app/hosts \
 	abzicht/dohotor:latest
 ```
+To only use DoH (HTTPS DNS service without TOR), check out the branch `DoH` (`git checkout DoH`) before deployment.
